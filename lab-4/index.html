@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <div id="maincontainer"></div>
+    <script>
+      let worker;
+      const maincontainer = document.getElementById("maincontainer");
+
+      const header = document.createElement("h2");
+      const header_text = document.createTextNode(
+        "Exercise 04: Javascript&DOM"
+      );
+      header.style.height = "90px";
+      header.appendChild(header_text);
+      maincontainer.appendChild(header);
+
+      const btn = document.createElement("button");
+      btn.textContent = "Click me to display Date and Time";
+      btn.setAttribute("id", "date");
+      btn.setAttribute("onclick", "startWebWorker()");
+      btn.style.position = "fixed";
+      btn.style.top = "70px";
+      btn.style.right = null;
+      maincontainer.appendChild(btn);
+
+      let time = false;
+      function startWebWorker() {
+        time = !time;
+        if (time) {
+          worker = new Worker("./worker.js");
+          worker.onmessage = (event) => {
+            btn.style.top = 0;
+            btn.style.right = 0;
+            btn.style.backgroundColor =
+              "#" + Math.floor(Math.random() * 16777215).toString(16);
+            btn.style.color =
+              "#" + Math.floor(Math.random() * 16777215).toString(16);
+            btn.textContent = event.data;
+            btn.style.border = "solid black 2px";
+          };
+        } else {
+          worker.terminate();
+          btn.style.top = "70px";
+          btn.style.right = null;
+          button.style.position = "static";
+        }
+      }
+
+      const info = document.createElement("p");
+      info.setAttribute("id", "personal");
+      info.textContent = "Personal Info";
+      info.setAttribute(
+        "style",
+        "text-decoration:underline; color:pink; cursor:pointer; width: fit-content;"
+      );
+
+      info.addEventListener("mouseover", () => {
+        info.style.backgroundColor = "yellow";
+        info.style.color = "blue";
+      });
+      info.addEventListener("mouseout", () => {
+        info.style.backgroundColor = null;
+        info.style.color = "pink";
+      });
+
+      let info_click = false;
+      info.addEventListener("click", () => {
+        info_click = !info_click;
+        if (info_click) {
+          infolist.style.display = "block";
+        } else {
+          infolist.style.display = "none";
+        }
+      });
+      maincontainer.appendChild(info);
+      
+      const infolist = document.createElement("ul");
+      const lst = [
+        "Phattharaphorn Chandecha, ID: 64010659",
+        "Subject: Web Application Development",
+        "Semester: 2",
+      ];
+      lst.forEach((item) => {
+        const myinfo = document.createElement("li");
+        myinfo.textContent = item;
+        infolist.appendChild(myinfo);
+      });
+      infolist.style.display = "none";
+      maincontainer.appendChild(infolist);
+
+      let listInFo = [
+        "https://www.huahintoday.com/wp-content/uploads/2022/06/fireworks.jpeg",
+        "https://1000logos.net/wp-content/uploads/2018/08/Hogwarts-Logo.jpg",
+        "https://keysteps.co.za/wp-content/uploads/2018/05/Take-Action.jpg",
+        "https://cdn.britannica.com/04/187404-050-8E7C9C06/bison-American-buffalo-plains-prairie.jpg",
+      ];
+      const Snapshots = document.createElement("h1");
+      Snapshots.textContent = "Snapshots";
+      maincontainer.appendChild(Snapshots);
+
+      const img = document.createElement("IMG");
+      img.setAttribute(
+        "src",
+        "https://curriculum.kmitl.ac.th/wp-content/uploads/2021/07/1440753623-72-o.jpg"
+      );
+      img.setAttribute("width", "500px");
+
+      const pic_list = ["Fireworks", "Crest", "Action", "Buffalo"];
+      const snapshots_ul = document.createElement("ul");
+      pic_list.forEach((item) => {
+        const snapshots_li = document.createElement("li");
+        const snapshots_a = document.createElement("a");
+        snapshots_a.textContent = item;
+        snapshots_a.style.color = "blue";
+        snapshots_a.style.textDecoration = "underline";
+
+        snapshots_a.addEventListener("click", () => {
+          img.src = listInFo[pic_list.indexOf(item)];
+        });
+        snapshots_a.addEventListener("mouseover", () => {
+          snapshots_a.style.cursor = "pointer";
+        });
+
+        snapshots_li.appendChild(snapshots_a);
+        snapshots_ul.appendChild(snapshots_li);
+      });
+
+      maincontainer.appendChild(snapshots_ul);
+      maincontainer.appendChild(img);
+    </script>
+  </body>
+</html>

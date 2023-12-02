@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Excercise 001-2</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <form action="/a">
+      <fieldset>
+        <legend><i>Contact Information</i></legend>
+        <div>
+          <label for="fname">First name:</label>
+          <input type="text" name="fname" />
+        </div>
+        <div>
+          <label for="lname">Last name:</label>
+          <input type="text" name="lname" />
+        </div>
+        <div>
+          <label for="email">E-mail:</label>
+          <input type="email" name="email" />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><i>Competition Question</i></legend>
+        <div>How tall is the Eiffel Tower in Paris. France?</div>
+        <div>
+          <input type="radio" id="584ft" name="tall" value="584ft" />
+          <label for="584ft">584ft</label>
+        </div>
+        <div>
+          <input type="radio" id="784ft" name="tall" value="784ft" />
+          <label for="784ft">784ft</label>
+        </div>
+        <div>
+          <input type="radio" id="984ft" name="tall" value="984ft" />
+          <label for="984ft">984ft</label>
+        </div>
+        <div>
+          <input type="radio" id="1184ft" name="tall" value="1184ft" />
+          <label for="1184ft">1184ft</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><i>Tiebreaker Question</i></legend>
+        <label for="question">
+          In 25 words or less, say why you would like to win $10,000:
+        </label>
+        <div>
+          <textarea id="question" name="answer" rows="10" cols="38"> </textarea>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><i>Enter competition</i></legend>
+        <div>
+          <input type="submit" value="Enter Competition" />
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>
