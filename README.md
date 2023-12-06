@@ -3,7 +3,7 @@
 </p>
 
 # Web Application Development - Lab
-Object Oriented Data Structures (01076119), Computer Engineering 60 at KMITL.
+Web Application Development (01076119), Computer Engineering 60 at KMITL.
 
 - This course is part of software development practices, with an emphasis on design. It focuses on **building** **web** **applications**. Including web basics, **HTML**, **cascading** **style** **sheets** **(CSS)**; model-view-controller design, web framework, data and object modelling, design concepts, **java script**, **DOM**, event & Ajax. 
 
