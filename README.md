@@ -10,7 +10,7 @@ Web Application Development (01076119), Computer Engineering 60 at KMITL.
   > **Note:** This collection of various labs is implemented in HTML CSS and Javascript for practical purposes.
 
 ## List all the lab - assignment 
-- [Lab 1 HTML](lab-1)
+- [Lab 1 HTML](lab-1) 
 
 - [Lab 2 CSS](lab-2)
  
