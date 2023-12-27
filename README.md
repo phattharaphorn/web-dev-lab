@@ -5,9 +5,7 @@
 # Web Application Development - Lab
 Web Application Development (01076119), Computer Engineering 60 at KMITL.
 
-- This course is part of software development practices, with an emphasis on design. It focuses on **building** **web** **applications**. Including web basics, **HTML**, **cascading** **style** **sheets** **(CSS)**; model-view-controller design, web framework, data and object modelling, design concepts, **java script**, **DOM**, event & Ajax. 
-
-  > **Note:** This collection of various labs is implemented in HTML CSS and Javascript for practical purposes.
+- This repository is a collection developed of software development practices, with an emphasis on **building** **Web** **Applications**. Including web basics, **HTML**, **Cascading** **Style** **Sheets** **(CSS)**, **Javascript**, **DOM**, and event & Ajax.
 
 ## List all the lab - assignment 
 - [Lab 1 HTML](lab-1) 
